@@ -12,9 +12,11 @@ Install dependencies:
 
 Start the server: 
        npm start
+
+
 You can then access the application by navigating to http://localhost:8000/ in your browser.
 
-
+Hosted link is https://ankithsharmaji.github.io/Placement-Cell.github.io/
 
 
 
