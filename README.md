@@ -1,7 +1,8 @@
 Team Career Camp wants to maintain a database of student interviews. They need to store batch information, student details, course scores, interview details, and results. Pages include sign-up/sign-in for employees, a list of students with an option to add a new student, a list of interviews with an option to create an interview, allocation of a student to an interview, and an option to mark a result status. A bonus feature is to create a page that fetches real available jobs in India for React/Node.js. The website should allow for downloading a complete CSV of all the data.
 
 
-Installation and Usage
+Installation and Usage :
+
 To install and run the application, follow these steps:
 
 Clone the repository: git clone <repository_url>
