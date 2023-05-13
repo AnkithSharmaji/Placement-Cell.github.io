@@ -1,0 +1,39 @@
+<%- include('../partials/header'); -%>
+
+<div class="container mt-4">
+  <h2>Interviews</h2>
+  <hr>
+
+  <% if(interviews.length > 0) { %>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Company</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% interviews.forEach(function(interview) { %>
+          <tr>
+            <td><%= interview.date %></td>
+            <td><%= interview.company %></td>
+            <td>
+              <a href="/interviews/<%= interview._id %>/students" class="btn btn-primary">View Students</a>
+              <a href="/interviews/<%= interview._id %>/edit" class="btn btn-success">Edit</a>
+              <form method="POST" action="/interviews/<%= interview._id %>?_method=DELETE" style="display: inline;">
+                <button type="submit" class="btn btn-danger">Delete</button>
+              </form>
+            </td>
+          </tr>
+        <% }); %>
+      </tbody>
+    </table>
+  <% } else { %>
+    <p>No interviews found.</p>
+  <% } %>
+
+  <a href="/interviews/new" class="btn btn-primary mt-3">New Interview</a>
+</div>
+
+<%- include('../partials/footer'); -%>

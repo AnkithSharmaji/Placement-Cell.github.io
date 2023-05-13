@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Results - Career Camp</title>
+</head>
+<body>
+    <%- include('../partials/header') %>
+    <div class="container">
+        <h1>Results</h1>
+        <a href="/results/new" class="btn btn-primary">Create New Result</a>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Student Name</th>
+                    <th>Company Name</th>
+                    <th>Result</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% for(var i=0; i<results.length; i++) { %>
+                    <tr>
+                        <td><%= results[i].student.name %></td>
+                        <td><%= results[i].interview.company %></td>
+                        <td><%= results[i].result %></td>
+                        <td>
+                            <a href="/results/<%= results[i]._id %>/edit" class="btn btn-primary">Edit</a>
+                            <form action="/results/<%= results[i]._id %>?_method=DELETE" method="POST" style="display: inline-block;">
+                                <button type="submit" class="btn btn-danger">Delete</button>
+                            </form>
+                        </td>
+                    </tr>
+                <% } %>
+            </tbody>
+        </table>
+    </div>
+    <%- include('../partials/footer') %>
+</body>
+</html>

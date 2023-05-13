@@ -1,0 +1,25 @@
+<!-- views/interviews/edit.ejs -->
+
+<%- include('../partials/header') %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-md-10 mx-auto">
+      <h2>Edit Interview</h2>
+      <form method="POST" action="/interviews/<%= interview._id %>?_method=PUT">
+        <div class="form-group">
+          <label for="companyName">Company Name</label>
+          <input type="text" class="form-control" id="companyName" name="companyName" value="<%= interview.companyName %>">
+        </div>
+        <div class="form-group">
+          <label for="interviewDate">Interview Date</label>
+          <input type="date" class="form-control" id="interviewDate" name="interviewDate" value="<%= interview.interviewDate.toISOString().substr(0, 10) %>">
+        </div>
+        <button type="submit" class="btn btn-primary">Save</button>
+        <a href="/interviews" class="btn btn-secondary">Cancel</a>
+      </form>
+    </div>
+  </div>
+</div>
+
+<%- include('../partials/footer') %>

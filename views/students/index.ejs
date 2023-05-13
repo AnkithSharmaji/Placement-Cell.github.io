@@ -1,0 +1,35 @@
+<% include ../partials/header %>
+
+<div class="container">
+  <h1>List of Students</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>College</th>
+        <th>Status</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% students.forEach(function(student) { %>
+        <tr>
+          <td><%= student.id %></td>
+          <td><%= student.name %></td>
+          <td><%= student.college %></td>
+          <td><%= student.status %></td>
+          <td>
+            <a href="/students/<%= student.id %>/edit">Edit</a>
+            <form action="/students/<%= student.id %>?_method=DELETE" method="POST" class="delete-form">
+              <button type="submit">Delete</button>
+            </form>
+          </td>
+        </tr>
+      <% }) %>
+    </tbody>
+  </table>
+  <a href="/students/new">Add New Student</a>
+</div>
+
+<% include ../partials/footer %>

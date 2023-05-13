@@ -1,0 +1,41 @@
+<% include ../partials/header %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <h1>Edit Student</h1>
+      <form action="/students/<%= student._id %>?_method=PUT" method="POST">
+        <div class="form-group">
+          <label for="name">Name:</label>
+          <input type="text" class="form-control" id="name" name="name" value="<%= student.name %>" required>
+        </div>
+        <div class="form-group">
+          <label for="college">College:</label>
+          <input type="text" class="form-control" id="college" name="college" value="<%= student.college %>" required>
+        </div>
+        <div class="form-group">
+          <label for="status">Status:</label>
+          <select class="form-control" id="status" name="status" required>
+            <option value="placed" <%= student.status === 'placed' ? 'selected' : '' %>>Placed</option>
+            <option value="not_placed" <%= student.status === 'not_placed' ? 'selected' : '' %>>Not Placed</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="dsa_score">DSA Score:</label>
+          <input type="number" class="form-control" id="dsa_score" name="dsa_score" value="<%= student.scores.dsa_score %>" required>
+        </div>
+        <div class="form-group">
+          <label for="webd_score">WebD Score:</label>
+          <input type="number" class="form-control" id="webd_score" name="webd_score" value="<%= student.scores.webd_score %>" required>
+        </div>
+        <div class="form-group">
+          <label for="react_score">React Score:</label>
+          <input type="number" class="form-control" id="react_score" name="react_score" value="<%= student.scores.react_score %>" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Update</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<% include ../partials/footer %>

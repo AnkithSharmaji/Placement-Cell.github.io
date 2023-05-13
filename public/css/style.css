@@ -1,0 +1,48 @@
+/* Set font family and background color for the entire page */
+body {
+  font-family: sans-serif;
+  background-color: #f1f1f1;
+}
+
+/* Style for the page header */
+header {
+  background-color: #333;
+  color: white;
+  padding: 1em;
+}
+
+/* Style for the page footer */
+footer {
+  background-color: #333;
+  color: white;
+  padding: 1em;
+  text-align: center;
+}
+
+/* Style for the navigation menu */
+nav {
+  background-color: #f1f1f1;
+  padding: 0.5em;
+  margin-bottom: 1em;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+nav li {
+  margin-right: 1em;
+}
+
+nav a {
+  color: #333;
+  text-decoration: none;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
